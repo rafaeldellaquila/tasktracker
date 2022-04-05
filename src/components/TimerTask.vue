@@ -2,26 +2,23 @@
     <div class="is-flex is-align-items-center is-justify-content-space-between">
         <chronometer-task :timeInSeconds="timeInSeconds" />
         <div class="is-flex is-align-items-center">
-            <button class="button" @click="initCount" :disabled="timerOn">
-                <i class="icon ri-play-line" />
-                <span> play </span>
-            </button>
-
-            <button class="button ml-4" @click="stopCount" :disabled="!timerOn">
-                <i class="icon ri-stop-fill" />
-                <span> stop </span>
-            </button>
+            <button-task :icon="'ri-play-line'" title="play" :handleTimer="initCount" :timeSwitcher="timerOn" />
+            <button-task :class="'ml-4'" :icon="'ri-stop-fill'" title="stop" :handleTimer="stopCount" :timeSwitcher="!timerOn" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import ButtonTask from './ButtonTask.vue'
 import ChronometerTask from './ChronometerTask.vue'
+
 export default defineComponent({
     name: 'TimerTask',
 
-    components: { ChronometerTask },
+    components: { ChronometerTask, ButtonTask },
+
+    emits: ['chronometerStopped'],
 
     data() {
         return {
@@ -41,6 +38,8 @@ export default defineComponent({
         stopCount() {
             this.timerOn = false
             clearInterval(this.chronometer)
+            this.$emit('chronometerStopped', this.timeInSeconds)
+            this.timeInSeconds = 0
         },
     },
 })
