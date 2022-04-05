@@ -9,6 +9,9 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
     name: 'ButtonTask',
+
+    emits: ['handleTimer'],
+
     props: {
         title: {
             type: String,
@@ -29,10 +32,11 @@ export default defineComponent({
             type: Boolean,
             default: false,
         },
+    },
 
-        handleTimer: {
-            type: Function,
-            default: () => 0,
+    methods: {
+        handleTimer(): void {
+            this.$emit('handleTimer')
         },
     },
 })
