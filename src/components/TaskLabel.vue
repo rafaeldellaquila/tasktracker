@@ -1,12 +1,12 @@
 <template>
-    <div class="box has-text-weight-bold">
+    <task-box>
         <div class="columns">
-            <div class="text column is-7">{{ task.task }}</div>
+            <div class="text column is-7">{{ task.task || 'Tarefa sem descrição' }}</div>
             <div class="column">
                 <chronometer-task :timeInSeconds="task.timeInSeconds" />
             </div>
         </div>
-    </div>
+    </task-box>
 </template>
 
 <script lang="ts">
@@ -15,11 +15,12 @@ import { defineComponent, PropType } from 'vue'
 import TaskInterface from '@/interface/TaskInterface'
 
 import ChronometerTask from './ChronometerTask.vue'
+import TaskBox from './TaskBox.vue'
 
 export default defineComponent({
     name: 'TaskLabel',
 
-    components: { ChronometerTask },
+    components: { ChronometerTask, TaskBox },
 
     props: {
         task: {
@@ -30,11 +31,4 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-.box {
-    background: #f8f9fa;
-    .text {
-        color: #414141;
-    }
-}
-</style>
+<style lang="scss" scoped></style>

@@ -8,6 +8,7 @@
             <form-task @saveTask="saveTask" />
             <div class="p-5">
                 <task-label v-for="(task, index) in tasks" :key="index" :task="task" />
+                <task-box v-if="!tasks.length"> Você ainda não fez nenhuma tarefa hoje. </task-box>
             </div>
         </div>
     </main>
@@ -20,6 +21,7 @@ import TaskInterface from '@/interface/TaskInterface'
 import SideBar from '@/components/SideBar.vue'
 import FormTask from '@/components/FormTask.vue'
 import TaskLabel from './components/TaskLabel.vue'
+import TaskBox from './components/TaskBox.vue'
 
 export default defineComponent({
     name: 'App',
@@ -28,6 +30,7 @@ export default defineComponent({
         SideBar,
         FormTask,
         TaskLabel,
+        TaskBox,
     },
 
     data() {
