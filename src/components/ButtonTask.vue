@@ -42,4 +42,13 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+    color: #ea798e;
+    border-color: #ea798e;
+    &:disabled {
+        color: #ababab;
+        border-color: #ababab;
+    }
+}
+</style>

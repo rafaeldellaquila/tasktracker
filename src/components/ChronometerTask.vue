@@ -1,6 +1,6 @@
 <template>
     <section>
-        <strong>
+        <strong class="timer">
             <i class="ri-timer-line" />
             {{ elapsedTime }}
         </strong>
@@ -27,4 +27,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.timer {
+    color: #ea798e;
+}
+</style>
