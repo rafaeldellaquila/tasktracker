@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
-import TimerTask from "./TimerTask.vue"
+import { defineComponent } from 'vue'
+import TimerTask from './TimerTask.vue'
 export default defineComponent({
-    name: "FormTask",
+    name: 'FormTask',
 
     components: { TimerTask },
 })

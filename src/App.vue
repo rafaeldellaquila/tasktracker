@@ -11,12 +11,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
-import SideBar from "@/components/SideBar.vue"
-import FormTask from "@/components/FormTask.vue"
+import { defineComponent } from 'vue'
+import SideBar from '@/components/SideBar.vue'
+import FormTask from '@/components/FormTask.vue'
 
 export default defineComponent({
-    name: "App",
+    name: 'App',
     components: {
         SideBar,
         FormTask,
@@ -25,5 +25,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@import 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css';
 </style>

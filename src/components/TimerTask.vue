@@ -16,10 +16,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
-import ChronometerTask from "./ChronometerTask.vue"
+import { defineComponent } from 'vue'
+import ChronometerTask from './ChronometerTask.vue'
 export default defineComponent({
-    name: "TimerTask",
+    name: 'TimerTask',
 
     components: { ChronometerTask },
 

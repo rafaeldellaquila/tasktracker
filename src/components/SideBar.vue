@@ -1,14 +1,14 @@
 <template>
     <header class="is-flex is-justify-content-center p-4">
-        <h1 class="mt-6"><img src="@/assets/logo.svg" alt="tasktracker logo"/></h1>
+        <h1 class="mt-6"><img src="@/assets/logo.svg" alt="tasktracker logo" /></h1>
     </header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'SideBar',
-});
+    name: 'SideBar',
+})
 </script>
 
 <style lang="scss" scoped>
@@ -22,6 +22,4 @@ header {
         height: auto;
     }
 }
-
-
 </style>
