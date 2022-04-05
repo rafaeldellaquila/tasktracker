@@ -12,14 +12,13 @@ import { defineComponent } from 'vue'
 export default defineComponent({
     name: 'ChronometerTask',
 
-    emits: ['chronometerStopped'],
-
     props: {
         timeInSeconds: {
             type: Number,
             default: 0,
         },
     },
+
     computed: {
         elapsedTime(): string {
             return new Date(this.timeInSeconds * 1000).toISOString().substring(11, 19)
