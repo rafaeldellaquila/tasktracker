@@ -3,7 +3,7 @@
         <chronometer-task :timeInSeconds="timeInSeconds" />
         <div class="is-flex is-align-items-center">
             <button-task :icon="'ri-play-line'" title="play" @handleTimer="initCount" :timeSwitcher="timerOn" />
-            <button-task :class="'ml-4'" :icon="'ri-stop-fill'" title="stop" @handleTimer="stopCount" :timeSwitcher="!timerOn" />
+            <button-task class="ml-4" :icon="'ri-stop-fill'" title="stop" @handleTimer="stopCount" :timeSwitcher="!timerOn" />
         </div>
     </div>
 </template>
@@ -44,5 +44,3 @@ export default defineComponent({
     },
 })
 </script>
-
-<style lang="scss" scoped></style>

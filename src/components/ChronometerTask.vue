@@ -28,7 +28,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
+
 .timer {
-    color: #ea798e;
+    color: $primary;
 }
 </style>

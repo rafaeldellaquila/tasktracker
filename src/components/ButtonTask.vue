@@ -43,12 +43,19 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
+
 button {
-    color: #ea798e;
-    border-color: #ea798e;
+    color: $primary;
+    border-color: $primary;
+
+    &.dark {
+        @include background-color($dark: true);
+    }
+
     &:disabled {
-        color: #ababab;
-        border-color: #ababab;
+        color: $gray;
+        border-color: $gray;
     }
 }
 </style>

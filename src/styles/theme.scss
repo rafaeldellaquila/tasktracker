@@ -1,0 +1,20 @@
+$primary: #ea798e;
+$secondary: #191f28;
+$white: #f8f9fa;
+$gray: #ababab;
+
+@mixin background-color($dark: true) {
+    @if $dark {
+        background-color: $secondary;
+    } @else {
+        background-color: $white;
+    }
+}
+
+@mixin border($dark: true) {
+    @if $dark {
+        border-right: 1px solid $gray;
+    } @else {
+        border: none;
+    }
+}

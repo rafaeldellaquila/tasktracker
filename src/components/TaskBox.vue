@@ -1,5 +1,5 @@
 <template>
-    <div class="box has-text-weight-bold">
+    <div class="box has-text-weight-bold dark">
         <slot />
     </div>
 </template>
@@ -13,10 +13,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/theme.scss';
+
 .box {
-    background: #f8f9fa;
+    @include background-color($dark: false);
+
     .text {
-        color: #414141;
+        color: $secondary;
     }
 }
 </style>

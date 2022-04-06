@@ -1,12 +1,12 @@
 <template>
-    <div class="box">
+    <div class="box" :class="{ darkClassTask }">
         <div class="columns">
             <div class="column is-8" role="form" aria-label="Formulário para criação de uma nova tarefa">
                 <input type="text" class="input" placeholder="Qual tarefa você deseja iniciar?" v-model="task" />
             </div>
 
             <div class="column">
-                <timer-task @chronometerStopped="endTask" />
+                <timer-task @chronometerStopped="endTask" :class="{ darkClassTask }" />
             </div>
         </div>
     </div>
@@ -41,11 +41,26 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-input {
-    color: #414141;
-    &:focus {
-        border-color: #ea798e;
-        box-shadow: none;
+@import '@/styles/theme.scss';
+
+.box {
+    @include background-color($dark: false);
+    input {
+        color: $secondary;
+        &:focus {
+            border-color: $primary;
+            box-shadow: none;
+        }
+    }
+
+    &.dark {
+        @include background-color($dark: true);
+        input {
+            @include background-color($dark: true);
+            &::placeholder {
+                color: $white;
+            }
+        }
     }
 }
 </style>
